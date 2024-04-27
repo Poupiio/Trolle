@@ -1,0 +1,36 @@
+<h1>Créer un compte</h1>
+<div class="container">
+  <form
+    #registerForm="ngForm"
+    class="mx-auto col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9 loginForm d-flex flex-column align-items-center justify-content-center mb-2"
+  >
+    <div class="mb-3 col-xxl-10 col-xl-10 col-lg-9 col-md-9 col-sm-9 inputGroup">
+      <label for="username" class="form-label">Nom et prénom</label>
+      <input type="text" class="form-control" id="username"
+      placeholder="Marion Martin"
+      [(ngModel)]="username"
+      name="username" />
+    </div>
+    <div class="mb-3 col-xxl-10 col-xl-10 col-lg-9 col-md-9 col-sm-9 inputGroup">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        [(ngModel)]="email"
+        name="email"
+      />
+    </div>
+    <div class="mb-3 col-xxl-10 col-xl-10 col-lg-9 col-md-9 col-sm-9 inputGroup">
+      <label for="password" class="form-label">Choisissez un mot de passe</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="password"
+      name="password" />
+    </div>
+    <button type="submit" class="btn btn-primary loginBtn" (click)="register(username, email, password)">
+      S'enregistrer
+    </button>
+    <div class="d-flex justify-content-end">
+      <a routerLink="/login" class="registerRedirect">Déjà un compte ?</a>
+    </div>
+  </form>
+</div>
